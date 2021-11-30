@@ -4,7 +4,8 @@ from playwright.async_api import Playwright
 
 @pytest.mark.smoke
 def test_for_start(playwright: Playwright):
-    browser = playwright.chromium.launch(headless=False, slow_mo=500)
+    browser = playwright.chromium.launch()
+    # browser = playwright.chromium.launch(headless=False, slow_mo=500)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://skillotron.com/")
