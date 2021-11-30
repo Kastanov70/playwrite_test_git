@@ -13,4 +13,4 @@ def test_for_start(playwright: Playwright):
     with page.expect_navigation():
         page.press("[aria-label=\"Найти\"]", "Enter")
     page.click("text=https://playwright.dev")
-    assert page.url == "https://playwright.dev/"
+    # assert page.url == "https://playwright.dev/"
