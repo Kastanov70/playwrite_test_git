@@ -10,7 +10,9 @@ def test_for_start(playwright: Playwright):
     page.goto("https://www.google.com/")
     page.click("[aria-label=\"Найти\"]")
     page.fill("[aria-label=\"Найти\"]", "playwright")
+    page.press("[aria-label=\"Найти\"]", "Tab")
     with page.expect_navigation():
-        page.press("[aria-label=\"Найти\"]", "Enter")
+        page.click(":nth-match(:text(\"Поиск в Google\"), 2)")
+
     page.click("text=https://playwright.dev")
-    # assert page.url == "https://playwright.dev/"
+    assert page.url == "https://playwright.dev/"
