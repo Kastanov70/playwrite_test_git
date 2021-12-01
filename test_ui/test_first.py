@@ -14,8 +14,9 @@ def test_for_start(playwright: Playwright):
     # Go to https://skillotron.com/signin
     page.goto("https://skillotron.com/signin")
     # Click text=News
-    name = os.environ['NAME']
+    name = os.environ["NAME"]
+    print(name)
     page.click("text=News")
     assert page.url == "https://skillotron.com/news"
     # Click h1:has-text("News")
-    assert page.text_content("h1:has-text(\"News\")") == name
+    assert page.text_content("h1:has-text(\"News\")") == "News"
