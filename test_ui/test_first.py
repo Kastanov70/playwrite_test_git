@@ -1,12 +1,12 @@
 import os
 import pytest
 from playwright.async_api import Playwright
-import utils.secret_config
 
 
 try:
     NAME = os.environ["NAME"]
 except KeyError:
+    import utils.secret_config
     NAME = utils.secret_config.NAME
 
 
